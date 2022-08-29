@@ -1,0 +1,21 @@
+
+<h1>This program predicts the yearly amounta customer spends with an E-commerce Company</h1>
+
+<p>Provide the necessary customer information</p>
+
+<form action="{% url 'amount' %}">
+    Average session time<input type="text" name="AVT">
+    <br>
+    <br>
+    Time on App <input type="text" name="TA">
+    <br>
+    <br>
+    Time on Website <input type="text" name="TW">
+    <br>
+    <br>
+    Length of Membership <input type="text" name="LM">
+    <br>
+    <br>
+   
+    <input type="submit" value="Predict">
+</form>
