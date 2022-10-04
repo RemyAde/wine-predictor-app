@@ -2,45 +2,68 @@
 
 <div class="container text-center">
 
-<h1>This program predicts wine quality</h1>
-<br>
-<h2>Provide the necessary wine properties</h2>
-<br>
-<form action="{% url 'results' %}">
-    fixed acidity <input type="text" name="FA">
+    <h1>Wine Quality Predictor</h1>
     <br>
     <br>
-    volatile acidity <input type="text" name="VA">
+    <h4>Provide the necessary wine properties</h4>
     <br>
-    <br>
-    citric acid <input type="text" name="CA">
-    <br>
-    <br>
-    residual sugar <input type="text" name="RS">
-    <br>
-    <br>
-    chlorides <input type="text" name="Ch">
-    <br>
-    <br>
-    free sulphur oxide <input type="text" name="FSO">
-    <br>
-    <br>
-    total sulphur oxide<input type="text" name="TSO">
-    <br>
-    <br>
-    density <input type="text" name="density">
-    <br>
-    <br>
-    pH <input type="text" name="pH">
-    <br>
-    <br>
-    sulphates <input type="text" name="Su">
-    <br>
-    <br>
-    alcohol <input type="text" name="Al">
-    <br>
-    <br>
+</div>
 
-    <input type="submit" value="Predict" class="btn btn-primary">
+<div class="container"> 
+<form class="row g-3" action="{% url 'results' %}" method="post">
+    {% csrf_token %} 
+    
+        <div class="col-md-4 mb-0">
+            <label for="FA" class="form-label">fixed acidity</label>
+            <input type="number" step="any" name="FA" class="form-control" id="FA" required>
+        </div>
+        <div class="col-md-4 mb-0">
+            <label for="VA" class="form-label">volatile acidity</label>
+            <input type="number" step="any" name="VA" class="form-control" id="VA" required>
+        </div>
+        <div class="col-md-4 mb-0">
+            <label for="CA" class="form-label">citric acid</label>
+            <input type="number" step="any" name="CA" class="form-control" id="CA" required>
+        </div>
+    
+        <div class="col-md-4 mb-0">
+            <label for="RS" class="form-label">residual acid</label>
+            <input type="number" step="any" name="RS" class="form-control" id="RS" required>
+        </div>
+        <div class="col-md-4 mb-0">
+            <label for="Ch" class="form-label">chlorides</label>
+            <input type="number" step="any" name="Ch" class="form-control" id="Ch" required>
+        </div>
+        <div class="col-md-4 mb-0">
+            <label for="FSO" class="form-label">free sulphur oxide</label>
+            <input type="number" step="any" name="FSO" class="form-control" id="FSO" required>
+        </div>
+    
+        <div class="col-md-4 mb-0">
+            <label for="TSO" class="form-label">total sulphur oxide</label>
+            <input type="number" step="any" name="TSO" class="form-control" id="TSO" required>
+        </div>
+        <div class="col-md-4 mb-0">
+            <label for="density" class="form-label">density</label>
+            <input type="number" step="any" name="density" class="form-control" id="density" required>
+        </div>
+        <div class="col-md-4 mb-0">
+            <label for="pH" class="form-label">pH</label>
+            <input type="number" step="any" name="pH" class="form-control" id="pH" required>
+        </div>
+    
+        <div class="col-md-4 mb-0">
+            <label for="Su" class="form-label">sulphates</label>
+            <input type="number" step="any" name="Su" class="form-control" id="Su" required>
+        </div>
+        <div class="col-md-4 mb-0">
+            <label for="Al" class="form-label">alcohol</label>
+            <input type="number" step="any" name="Al" class="form-control" id="Al" required>
+        </div>
+    <br>
+    <div class="col-12 text-center">
+        <button class="btn btn-primary" type="submit">Predict</button>
+    </div>
+
 </form>
 </div>

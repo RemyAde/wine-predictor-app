@@ -7,21 +7,21 @@ def home(request):
 
 def results(request):
 
-    FA = float(request.GET.get("FA"))
-    VA = float(request.GET.get("VA"))
-    CA = float(request.GET.get("CA"))
-    RS = float(request.GET.get("RS"))
-    CHO = float(request.GET.get("Ch"))
-    FSO = float(request.GET.get("FSO"))
-    TSO = float(request.GET.get("TSO"))
-    DSO = float(request.GET.get("density"))
-    PH = float(request.GET.get("pH"))
-    SOO = float(request.GET.get("Su"))
-    ALO = float(request.GET.get("Al"))
+    FA = float(request.POST.get("FA"))
+    VA = float(request.POST.get("VA"))
+    CA = float(request.POST.get("CA"))
+    RS = float(request.POST.get("RS"))
+    CHO = float(request.POST.get("Ch"))
+    FSO = float(request.POST.get("FSO"))
+    TSO = float(request.POST.get("TSO"))
+    DSO = float(request.POST.get("density"))
+    PH = float(request.POST.get("pH"))
+    SOO = float(request.POST.get("Su"))
+    ALO = float(request.POST.get("Al"))
 
 
     test_pred_vals = np.array([FA,VA,CA,RS,CHO,FSO,TSO,DSO,PH,SOO,ALO]).reshape(1,-1)
-    model = pd.read_pickle(r'c:\Users\USER\Desktop\Work\djangoStuffs\ml_django\ml\new.pickle')
+    model = pd.read_pickle(r"C:\Users\USER\Desktop\Work\djangoStuffs\ml_django\ml\new.pickle")
     pred_results = model.predict(test_pred_vals)
     pred_results = pred_results[0]
 
